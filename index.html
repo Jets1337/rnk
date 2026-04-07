@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>РНК | Официально</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0a0a0a, #1a0033);
+      color: #00ff9d;
+      font-family: 'VT323', 'Courier New', monospace;
+      text-align: center;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 20px;
+      z-index: 10;
+    }
+
+    .ban {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ff0033;
+      color: white;
+      padding: 10px 25px;
+      font-size: 1.3rem;
+      border: 4px solid #ffff00;
+      transform: rotate(15deg);
+      box-shadow: 0 0 25px #ffff00;
+      animation: banShake 0.7s infinite alternate;
+      z-index: 20;
+    }
+
+    @keyframes banShake {
+      from {
+        transform: rotate(12deg);
+      }
+      to {
+        transform: rotate(18deg);
+      }
+    }
+
+    .header {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: bold;
+      letter-spacing: 8px;
+      text-shadow: 0 0 30px #00ff9d, 0 0 60px #ff00ff;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      color: #ff3366;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px #ff3366;
+    }
+
+    .message {
+      font-size: clamp(1.6rem, 5vw, 2.3rem);
+      line-height: 1.4;
+      max-width: 820px;
+      margin: 25px auto;
+    }
+
+    .emoji {
+      font-size: clamp(5rem, 18vw, 9rem);
+      margin: 20px 0;
+      animation: pulse 2.8s infinite ease-in-out;
+      filter: drop-shadow(0 0 40px #ff00ff);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(-5deg);
+      }
+      50% {
+        transform: scale(1.12) rotate(5deg);
+      }
+    }
+
+    button {
+      margin-top: 40px;
+      padding: 18px 60px;
+      font-size: clamp(1.4rem, 4.5vw, 1.8rem);
+      background: transparent;
+      color: #00ff9d;
+      border: 5px solid #00ff9d;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      font-family: inherit;
+      box-shadow: 0 0 25px #00ff9d;
+    }
+
+    button:hover {
+      background: #00ff9d;
+      color: #0a0a0a;
+      transform: scale(1.1);
+      box-shadow: 0 0 50px #00ff9d;
+    }
+
+    .status {
+      margin: 35px 0 15px;
+      font-size: clamp(1.3rem, 4vw, 1.6rem);
+      color: #ff5588;
+      min-height: 40px;
+      text-shadow: 0 0 10px #ff5588;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 1.1rem;
+      opacity: 0.65;
+      width: 100%;
+    }
+
+    .neon-line {
+      position: absolute;
+      bottom: 80px;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #00ff9d, transparent);
+      box-shadow: 0 0 20px #00ff9d;
+    }
+  </style>
+</head>
+<body>
+
+<div class="ban">ЗАБЛОКИРОВАНО ВСЁ</div>
+
+<div class="container">
+  <div class="header">РНК</div>
+  <div class="subtitle">Федеральная служба по надзору в сфере связи</div>
+
+  <div class="message">
+    Уважаемые граждане!<br>
+    Мы заблокировали интернет, YouTube, Telegram,<br>
+    даже букву «А» в некоторых словах...<br>
+    <strong>но один сайт остался</strong>
+  </div>
+
+  <div class="emoji">🍆</div>
+
+  <div class="message">
+    Поэтому наш главный профессиональный навык теперь:<br>
+    <span style="color:#ff3366; font-size: clamp(2rem, 7vw, 3rem); font-weight:bold;">
+                ГЛУБОКИЙ ОТСОС
+            </span>
+  </div>
+
+  <button onclick="clickButton(this)">
+    Я понимаю и принимаю условия
+  </button>
+
+  <div
+    class="status"
+    id="status"
+  >Статус: идёт процесс сосания...
+  </div>
+</div>
+
+<div class="neon-line"></div>
+
+<div class="footer">
+  РНК © 2026<br>
+  Все права на глубокий минет защищены законом РФ
+</div>
+
+<script>
+  function clickButton(btn) {
+    const texts = [
+      'Спасибо за понимание ❤️',
+      'Теперь вы в белом списке',
+      'Отсос успешно засчитан ✓',
+      'Блокировка снята... с члена',
+      'РНК гордится вами',
+      'Минет года 2026'
+    ]
+
+    btn.innerHTML = texts[Math.floor(Math.random() * texts.length)]
+    btn.style.background = '#00ff9d'
+    btn.style.color = '#0a0a0a'
+
+    createSparks()
+
+    setTimeout(() => {
+      if (Math.random() > 0.65) {
+        btn.innerHTML = 'Я понимаю и принимаю условия'
+        btn.style.background = 'transparent'
+        btn.style.color = '#00ff9d'
+      }
+    }, 2800)
+  }
+
+  function createSparks() {
+    for (let i = 0; i < 45; i++) {
+      const spark = document.createElement('div')
+      spark.textContent = ['✦', '★', '⬡', '◉', '🍆'][Math.floor(Math.random() * 5)]
+      spark.style.position = 'fixed'
+      spark.style.left = Math.random() * 100 + 'vw'
+      spark.style.top = '-40px'
+      spark.style.fontSize = (18 + Math.random() * 28) + 'px'
+      spark.style.color = '#00ff9d'
+      spark.style.opacity = '0.9'
+      spark.style.pointerEvents = 'none'
+      spark.style.zIndex = '9999'
+      spark.style.animation = `sparkFall ${1.8 + Math.random() * 2.2}s linear forwards`
+      document.body.appendChild(spark)
+      setTimeout(() => spark.remove(), 5000)
+    }
+  }
+
+  const style = document.createElement('style')
+  style.innerHTML = `
+            @keyframes sparkFall {
+                to {
+                    transform: translateY(110vh) rotate(${Math.random() > 0.5 ? '720' : '-720'}deg);
+                    opacity: 0;
+                }
+            }
+        `
+  document.head.appendChild(style)
+
+  const statuses = [
+    'Статус: идёт процесс сосания...',
+    'Статус: 404 — стыд не найден',
+    'Статус: успешно сосёт с 2012 года',
+    'Статус: даже VPN не спасёт от этого',
+    'Статус: РНК в деле 🔥',
+    'Статус: буква А заблокирована, но это работает'
+  ]
+
+  setInterval(() => {
+    document.getElementById('status').textContent = statuses[Math.floor(Math.random() * statuses.length)]
+  }, 3800)
+
+  // Автоматические искры
+  setInterval(() => {
+    if (Math.random() > 0.4) createSparks()
+  }, 5500)
+</script>
+</body>
+</html>
