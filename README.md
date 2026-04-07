@@ -1,1 +1,1 @@
-jets1337.github.io/rnk
+https://jets1337.github.io/rnk
